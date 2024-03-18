@@ -5,6 +5,7 @@ import {Spin} from 'antd'
 import { LoadingOutlined } from '@ant-design/icons';
 import axios from 'axios'
 import Cookies from 'js-cookie'
+
 const AdminHome = () => {
 const [totalUsers,setTotalUsers]=useState(0)
 const [totalBookings,setTotalBookings]=useState(0)
