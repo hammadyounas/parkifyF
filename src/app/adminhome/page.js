@@ -1,14 +1,16 @@
 "use client"
 import {React,useEffect, useState} from 'react'
-import Navbar from '../../../components/Navbar/Navbar'
+import Navbar from '../../components/Navbar/Navbar'
 import Cookies from 'js-cookie'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
-import AdminHome from '../../../components/Adminhome/AdminHome'
-const Page = () => {
+import AdminHome from '../../components/Adminhome/AdminHome'
+
+const AdminHomePage = () => {
   
   const [userAuthorized,setUserAuthorized]=useState(false)
   const router = useRouter();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -52,4 +54,4 @@ const Page = () => {
     )
 }
 
-export default Page
+export default AdminHomePage;

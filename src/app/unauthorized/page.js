@@ -1,6 +1,7 @@
 "use client"
 import {React,useEffect,useState} from "react";
-const Page = () => {
+
+const Unauthorized = () => {
     const [screenWidth, setScreenWidth] = useState(null);
     
     useEffect(() => {
@@ -24,4 +25,4 @@ const Page = () => {
     );
 };
 
-export default Page;
+export default Unauthorized;

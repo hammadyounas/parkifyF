@@ -4,10 +4,10 @@ import Cookies from 'js-cookie'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 
-import Navbar from '../../../components/Navbar/Navbar'
-import AllUsers from '../../../components/AllUsers/AllUsers'
+import Navbar from '../../components/Navbar/Navbar'
+import AllUsers from '../../components/AllUsers/AllUsers'
 
-const Page = () => {
+const Users = () => {
   const [userAuthorized,setUserAuthorized]=useState(false)
   const router = useRouter();
   useEffect(() => {
@@ -52,4 +52,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default Users;

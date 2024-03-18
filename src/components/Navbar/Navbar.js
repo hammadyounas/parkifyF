@@ -1,7 +1,8 @@
 "use client"
+import "bootstrap/dist/css/bootstrap.min.css";
 import { React, useEffect } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "bootstrap/dist/js/bootstrap.bundle.min.js"
+
+
 import Link from 'next/link';
 import { Modal,Button} from 'antd';
 import { useRouter } from 'next/navigation';
@@ -26,6 +27,12 @@ const Navbar = ({selectedLink,type}) => {
       },
     });
   };
+
+
+    useEffect(() => {
+      require("bootstrap/dist/js/bootstrap.bundle.min.js");
+    }, []);
+
  
   return (
     <nav className={`navbar navbar-expand-lg ${style.navbar}`}>

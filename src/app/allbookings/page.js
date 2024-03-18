@@ -3,9 +3,9 @@ import {React,useEffect, useState} from 'react'
 import Cookies from 'js-cookie'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
-import AllBookings from '../../../components/AllBookings/AllBookings'
-import Navbar from '../../../components/Navbar/Navbar'
-const Page = () => {
+import AllBookings from '../../components/AllBookings/AllBookings'
+import Navbar from '../../components/Navbar/Navbar'
+const Booking = () => {
   const [userAuthorized,setUserAuthorized]=useState(false)
   const router = useRouter();
   useEffect(() => {
@@ -50,4 +50,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default Booking;

@@ -1,13 +1,14 @@
 "use client"
+
 import {React,useEffect, useState} from 'react'
 import Cookies from 'js-cookie'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 
-import Navbar from '../../../components/Navbar/Navbar'
-import UserBookings from '../../../components/UserBookings/UserBookings'
+import Navbar from '../../components/Navbar/Navbar'
+import UserBookings from '../../components/UserBookings/UserBookings'
 
-const Page = () => {
+const ViewBooking = () => {
   const [userAuthorized,setUserAuthorized]=useState(false)
   const router = useRouter();
   useEffect(() => {
@@ -53,4 +54,4 @@ const Page = () => {
     )
 }
 
-export default Page
+export default ViewBooking;
