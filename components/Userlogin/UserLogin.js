@@ -131,12 +131,13 @@ const UserLogin = () => {
           span: 16,
         }}
         style={{
-          maxWidth: 400,
+          // maxWidth: 400,
           // display: loginFormSelected ? 'none' : ''
         }}
         initialValues={{
           remember: true,
         }}
+        className={style.form}
         onFinish={onFinish2}
         onFinishFailed={onFinishFailed2}
 

@@ -40,17 +40,14 @@ const layout = ({children}) => {
   }, []);
   
   
-    return (
-     <>
-      {
-        userAuthenticated
-        &&
-        {children}
-      }
-     </>
-         
-    
-    );
+  return (
+    <>
+      
+        {userAuthenticated && 
+        {children} }
+      
+    </>
+  );
   }
   
   

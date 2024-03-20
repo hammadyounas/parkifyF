@@ -2,10 +2,10 @@
 import {React,useEffect,useState} from 'react'
 import Cookies from 'js-cookie';
 import axios from 'axios';
-import { notFound } from 'next/navigation';
-
+import { notFound,useRouter } from 'next/navigation';
 const layout = ({children}) => {
- 
+  const [userAuthenticated,setUserAuthenticated]=useState(false)
+  const {push} = useRouter();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -18,13 +18,18 @@ const layout = ({children}) => {
             },
           }
         )
-          if(response.data.role !== "user"){
+        
+          if(response.data.role != "user"){
         notFound()  
+        
         }
-       
+       else{
+        setUserAuthenticated(true)
+       }
         
       } catch (error) {
-        notFound();
+        
+        (!userAuthenticated && push("/"))
 
 
       }
@@ -35,10 +40,13 @@ const layout = ({children}) => {
   
   
     return (
-     <>
-     {children}
-     
-     </>
+      <>
+      
+      {userAuthenticated && 
+        (children) }
+      
+      
+    </>
          
     
     );

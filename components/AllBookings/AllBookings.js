@@ -22,12 +22,7 @@ const columns = [
     align:'center'
 
   },
-  {
-    title: 'Hours',
-    dataIndex: 'hours',
-    align:'center'
-
-  },
+  
   {
     title: 'Booked By',
     dataIndex: 'bookedby',
@@ -96,6 +91,14 @@ const AllBookings = () => {
     
     <Table columns={columns} dataSource={data} style={{marginTop:'20px'}}/></Spin></>
     }
+    {data   &&
+      data.length <0 &&
+     
+     <>
+     
+     <h1 style={{textAlign:'center',marginTop:'40px',marginBottom:'10px',fontWeight:'bold',fontFamily:'calibri'}}>No bookings to show.</h1>
+     </>
+     }
      </>
   )
 };
