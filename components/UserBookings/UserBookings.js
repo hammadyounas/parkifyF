@@ -42,7 +42,7 @@ const UserBookings = () => {
   const deleteParking = async (parkingId) => {
     try {
       await axios
-        .delete('http://localhost:4000/user/cancelParking', {
+        .delete('https://parkify-backend.vercel.app/user/cancelParking', {
           data: { parkingId },
           headers: {
             'Content-Type': 'application/json',
