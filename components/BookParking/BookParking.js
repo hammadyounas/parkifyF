@@ -288,7 +288,7 @@ const BookParking = () => {
                 <div className={style.parkingAreaDiv} style={{ display: dataEntered && formSubmitted && !parkingBooked ? '' : 'none' }}>
                     
                     <h4>Booked slots are marked as <text style={{ color: 'red' }}>red</text> where available are marked as <text style={{ color: 'green' }}>green</text></h4>
-                    <p>Note: click on the available "green" boxes to book those slots and click on red  boxes to check their booking details</p>
+                    <p>Note: click on the available green boxes to book those slots and click on red  boxes to check their booking details</p>
                     {(selectedArea === 1 && parkings.length===2) && parkings.map((group, outerIndex) => (
                         <div key={`row-${outerIndex}`} className={style.smallPreviewRow}>
                             {group.map((slot, innerIndex) => (
@@ -398,7 +398,7 @@ const BookParking = () => {
                       
                         </div>
                     <div className={style.selectedSlot} style={{display: slotSelected && selectedSlot.value !=='booked' ? '' : 'none' , width: screenWidth < 900 ? '90%' : '60%' }}>
-                        <h1>'Slot {(selectedSlot.number)}' Selected</h1>
+                        <h1>Slot {(selectedSlot.number)} Selected</h1>
                         <h4
                             style={{
                                 display: slotSelected ? '' : 'none',
