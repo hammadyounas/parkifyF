@@ -1,19 +1,9 @@
+// layouts/Layout.js
+import React from 'react';
+import UserAuthentication from '../../../components/Authenticate/UserAuthentication';
 
-import {React} from 'react'
+const Layout = ({ children }) => {
+  return <UserAuthentication>{children}</UserAuthentication>;
+};
 
-const layout = ({children}) => {
-
-  
-    return (
-   
-    <>
-   
-     {children}
-   
-  </>
-    
-    );
-  }
-  
-  
-  export default layout
+export default Layout

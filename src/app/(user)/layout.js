@@ -1,18 +1,11 @@
 "use client"
 import {React} from 'react'
+import UserAuthentication from '../../../components/Authenticate/UserAuthentication';
 const layout = ({children}) => {
   
   
   
-    return (
-     <>
-   
-        {children}
-      
-     </>
-         
-    
-    );
+   return <UserAuthentication>{children}</UserAuthentication>;
   }
   
   
