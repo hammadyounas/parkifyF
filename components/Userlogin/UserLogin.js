@@ -92,7 +92,6 @@ const UserLogin = () => {
   
       } catch (error) {
         console.error('Error logging in:', error);
-        setModalVisible(false)
       }
     })()
     }

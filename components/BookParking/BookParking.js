@@ -427,7 +427,7 @@ const BookParking = () => {
                     display: parkingBooked ? '' : 'none'
                 }}>
                     <h1>Congratulations! Your parking slot has been booked</h1>
-                    <p>We have sent a confirmation email to {Cookies.get('email')}</p>
+                    <p>We have sent a slot confirmation email to you</p>
                     <Button type='primary'
                         style={{ backgroundColor: 'black', marginTop: '20px', width: '200px', height: '50px' }}
                         onClick={() => {
