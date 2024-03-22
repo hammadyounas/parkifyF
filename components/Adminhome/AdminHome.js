@@ -16,7 +16,7 @@ const [spinVisible,setSpinVisible]=useState(false)
       try {
         const token = Cookies.get('token')
         await axios.get(
-          'http://localhost:4000/user/countEverything',
+          'https://parkify-backend.vercel.app/user/countEverything',
           {
             headers: {
               Authorization: `bearer ${token}`,

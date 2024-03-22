@@ -13,7 +13,7 @@ const AllFeedbacks = () => {
       try {
 
         await axios.get(
-          'http://localhost:4000/user/allfeedbacks',
+          'https://parkify-backend.vercel.app/user/allfeedbacks',
           {
             
             headers: {

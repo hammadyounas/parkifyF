@@ -1,2 +1,1 @@
-import './config'
-
+import {SERVER_URL} from './config'

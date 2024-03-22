@@ -34,7 +34,7 @@ const Feedback = () => {
         }
         else{
           try {
-            const response = await axios.post('http://localhost:4000/user/userFeedback', 
+            const response = await axios.post('https://parkify-backend.vercel.app/user/userFeedback', 
             { email: Cookies.get('email'), feedback: value },
   {
     headers: {

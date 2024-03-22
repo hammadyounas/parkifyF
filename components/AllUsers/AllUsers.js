@@ -39,7 +39,7 @@ const AllUsers = () => {
 
       console.log('email', email)
       await axios.delete(
-        'http://localhost:4000/user/deleteuser',
+        'https://parkify-backend.vercel.app/user/deleteuser',
         {
           data: { email },
           headers: {
@@ -83,7 +83,7 @@ const AllUsers = () => {
       try {
 
         await axios.get(
-          'http://localhost:4000/user/allUsers',
+          'https://parkify-backend.vercel.app/user/allUsers',
           {
             headers: {
               Authorization: `bearer ${Cookies.get('token')}`,

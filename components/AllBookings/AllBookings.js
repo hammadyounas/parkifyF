@@ -22,7 +22,7 @@ const columns = [
     align:'center'
 
   },
-  
+
   {
     title: 'Booked By',
     dataIndex: 'bookedby',
@@ -43,7 +43,7 @@ const AllBookings = () => {
       try {
 
         await axios.get(
-          'http://localhost:4000/user/allBookings',
+          'https://parkify-backend.vercel.app/user/allBookings',
           {
             headers: {
               Authorization: `bearer ${Cookies.get('token')}`,
@@ -89,16 +89,13 @@ const AllBookings = () => {
     <Spin spinning={spinVisible}>
     <h1 style={{textAlign:'center',marginTop:'40px',marginBottom:'10px',fontWeight:'bold',fontFamily:'calibri'}}>All Bookings.</h1>
     
-    <Table columns={columns} dataSource={data} style={{marginTop:'20px'}}/></Spin></>
+    <div className={style.scrollableTable}>
+            <Table columns={columns} dataSource={data} />
+          </div></Spin>
+    
+    
+    </>
     }
-    {data   &&
-      data.length <0 &&
-     
-     <>
-     
-     <h1 style={{textAlign:'center',marginTop:'40px',marginBottom:'10px',fontWeight:'bold',fontFamily:'calibri'}}>No bookings to show.</h1>
-     </>
-     }
      </>
   )
 };

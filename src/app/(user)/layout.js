@@ -3,33 +3,33 @@ import {React,useEffect,useState} from 'react'
 import Cookies from 'js-cookie';
 import axios from 'axios';
 import { notFound,useRouter } from 'next/navigation';
+import { Spin } from 'antd';
 const layout = ({children}) => {
-  const [userAuthenticated,setUserAuthenticated]=useState(false)
   const {push} = useRouter();
+  const [spinVisible, setSpinVisible] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const token = Cookies.get('token')
         const response = await axios.get(
-          'http://localhost:4000/user/authenticateUser',
+          'https://parkify-backend.vercel.app/user/authenticateUser',
           {
             headers: {
               Authorization: `bearer ${token}`,
             },
           }
         )
-        
-          if(response.data.role != "user"){
-        notFound()  
-        
+          if(response.data.role !== "user"){
+                notFound()
+
         }
-       else{
-        setUserAuthenticated(true)
-       }
+        setSpinVisible(false)
+       
         
       } catch (error) {
-        
-        (!userAuthenticated && push("/"))
+        push("/unauthorized")
+        setSpinVisible(false)
 
 
       }
@@ -40,13 +40,11 @@ const layout = ({children}) => {
   
   
     return (
-      <>
-      
-      {userAuthenticated && 
-        (children) }
-      
-      
-    </>
+     <>
+    <Spin spinning={spinVisible}>
+        {!spinVisible && children}
+      </Spin>
+     </>
          
     
     );

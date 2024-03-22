@@ -31,7 +31,7 @@ const UserLogin = () => {
       (async () => {
         
         try {
-          const response = await axios.post('http://localhost:4000/user/signup', {
+          const response = await axios.post('https://parkify-backend.vercel.app/user/signup', {
             email: values.email,
             password: values.password,
             username: values.username
@@ -63,7 +63,7 @@ const UserLogin = () => {
     setSpinVisible(true)
         
       try {
-        const response = await axios.post('http://localhost:4000/user/login', {
+        const response = await axios.post('https://parkify-backend.vercel.app/user/login', {
           email: values.email,
           password: values.password
         }).then(response => {
@@ -118,8 +118,7 @@ const UserLogin = () => {
       <div className={style.textDiv}
       
       >
-      <p>{loginFormSelected?'Enter your email and password':!verificationEmailSent?'Enter your email so that we can verify you ':!emailVerified?"We have sent you a verification token on your email enter that token":'Enter Username and password for your account'}</p>
-      </div>
+     </div>
       <Spin spinning={spinVisible}>
       <Form
       ref={formRef}
@@ -131,13 +130,13 @@ const UserLogin = () => {
           span: 16,
         }}
         style={{
-          // maxWidth: 400,
+          maxWidth: 400,
+          marginTop:'20px'
           // display: loginFormSelected ? 'none' : ''
         }}
         initialValues={{
           remember: true,
         }}
-        className={style.form}
         onFinish={onFinish2}
         onFinishFailed={onFinishFailed2}
 
@@ -235,7 +234,7 @@ const UserLogin = () => {
 setSpinVisible(true)
 
                     try {
-                      const response = await axios.post('http://localhost:4000/user/sendVerificationEmail', {
+                      const response = await axios.post('https://parkify-backend.vercel.app/user/sendVerificationEmail', {
                         email: values.email,
                       });
                 
@@ -272,7 +271,7 @@ messageApi.info(error.response.data.message)
 setSpinVisible(true)
 
                     try {
-                      const response = await axios.post('http://localhost:4000/user/matchToken', {
+                      const response = await axios.post('https://parkify-backend.vercel.app/user/matchToken', {
                         email: values.email,
                         token:values.token
                       });
